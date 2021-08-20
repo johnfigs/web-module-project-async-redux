@@ -16,12 +16,18 @@ const Quote = (props) => {
       if (isFetching) {
         return <h2>Fetching a quote for ya!</h2>;
       }
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        getQuote();
+    }
     
 
     return (
         <div>
             <p>{quote.quote}</p>
             <p>{`-${quote.character} from ${quote.anime}`}</p>
+            <button onClick={handleClick} >Get Quote</button>
         </div>
     )
 }
